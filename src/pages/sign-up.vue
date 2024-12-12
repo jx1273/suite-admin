@@ -1,18 +1,15 @@
 <script setup lang="ts">
+import AuthTitle from '@/components/AuthTitle.vue'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Command } from 'lucide-vue-next'
 </script>
 
 <template>
   <div class="min-w-screen min-h-screen flex items-center justify-center">
     <main class="flex flex-col gap-4">
-      <h1 class="text-xl font-bold flex items-center gap-2">
-        <Command />
-        <span>Shadcn Admin</span>
-      </h1>
+      <AuthTitle />
       <Card class="mx-auto max-w-sm">
         <CardHeader>
           <CardTitle class="text-xl">

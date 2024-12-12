@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AuthTitle from '@/components/AuthTitle.vue'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import {
@@ -6,7 +7,6 @@ import {
   PinInputGroup,
   PinInputInput,
 } from '@/components/ui/pin-input'
-import { Command } from 'lucide-vue-next'
 import { ref } from 'vue'
 
 const value = ref<string[]>([])
@@ -19,10 +19,7 @@ function handleComplete(e: string[]) {
 <template>
   <div class="min-w-screen min-h-screen flex items-center justify-center">
     <div class="flex flex-col gap-4">
-      <h1 class="text-xl font-bold flex items-center gap-2">
-        <Command />
-        <span>Shadcn Admin</span>
-      </h1>
+      <AuthTitle />
       <Card>
         <CardHeader>
           <CardTitle class="text-2xl">
