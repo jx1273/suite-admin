@@ -1,5 +1,7 @@
 # Shadcn Vue Admin
 
+[![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
+
 [中文](./README-CN.md)
 
 Forked from [shadcn-admin](https://github.com/satnaing/shadcn-admin)
