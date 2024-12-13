@@ -28,7 +28,7 @@ const { isDisabled, isHidden, isRequired, overrideOptions } = useDependencies(pr
   <component
     :is="isValidConfig(config)
       ? typeof config.component === 'string'
-        ? INPUT_COMPONENTS[config.component!] 
+        ? INPUT_COMPONENTS[config.component!]
         : config.component
       : INPUT_COMPONENTS[DEFAULT_ZOD_HANDLERS[shape.type]] "
     v-if="!isHidden"
