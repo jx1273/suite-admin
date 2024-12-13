@@ -29,8 +29,10 @@ const socialMediaAccounts = ref<ISocialMediaAccount[]>([
 
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
       <li v-for="account in socialMediaAccounts" :key="account.title">
-        <a href="#" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white rounded-lg border border-stone-200 shadow">
-          <h2 class="text-lg font-bold mb-2">{{ account.title }}</h2>
+        <a :href="account.url || '#'" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white rounded-lg border border-stone-200 shadow">
+          <h2 class="text-lg font-bold mb-2">
+            {{ account.title }}
+          </h2>
           <p class="text-sm text-stone-500">
             {{ account.desc }}
           </p>
