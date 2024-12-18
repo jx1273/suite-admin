@@ -2,7 +2,7 @@
 import Page from '@/components/Layout/Page.vue'
 import Button from '@/components/ui/button/Button.vue'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import OverviewContent from './_components/OverviewContent.vue'
+import OverviewContent from './components/OverviewContent.vue'
 
 const tabs = ref([
   { name: 'Overview', value: 'overview' },

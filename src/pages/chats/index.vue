@@ -8,8 +8,8 @@ import {
 import Input from '@/components/ui/input/Input.vue'
 
 import { MessagesSquare, Search } from 'lucide-vue-next'
-import User from './_components/User.vue'
-import { users } from './_data/user'
+import User from './components/User.vue'
+import { users } from './data/user'
 
 const activeUser = users[0]
 </script>

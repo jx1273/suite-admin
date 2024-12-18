@@ -19,6 +19,12 @@ export default defineConfig({
     visualizer({ gzipSize: true, brotliSize: true }),
     Pages({
       routeStyle: 'nuxt',
+      exclude: [
+        '**/components/**',
+        '**/layouts/**',
+        '**/data/**',
+        '**/types/**',
+      ],
     }),
     Layouts({
       defaultLayout: 'default',

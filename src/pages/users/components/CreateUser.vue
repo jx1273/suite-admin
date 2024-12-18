@@ -79,10 +79,6 @@ function onSubmit(values: Record<string, any>) {
               type: 'password',
             },
           },
-          // role: {
-          //   label: 'Role',
-          //   component: 'select',
-          // },
         }"
         @submit="onSubmit"
       >
