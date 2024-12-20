@@ -13,23 +13,26 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: 'username',
     header: ({ column }) => h(DataTableColumnHeader<User>, { column, title: 'username' }),
-    cell: ({ row }) => h('div', { class: 'w-20' }, row.getValue('username')),
+    cell: ({ row }) => h('div', { }, row.getValue('username')),
     enableSorting: false,
     enableHiding: false,
+    enableResizing: true,
   },
 
   {
     accessorKey: 'email',
     header: ({ column }) => h(DataTableColumnHeader<User>, { column, title: 'Email' }),
-    cell: ({ row }) => h('div', { class: 'w-30' }, row.getValue('email')),
+    cell: ({ row }) => h('div', { }, row.getValue('email')),
     enableSorting: false,
+    enableResizing: true,
   },
 
   {
     accessorKey: 'phoneNumber',
     header: ({ column }) => h(DataTableColumnHeader<User>, { column, title: 'PhoneNumber' }),
-    cell: ({ row }) => h('div', { class: 'w-20' }, row.getValue('phoneNumber')),
+    cell: ({ row }) => h('div', { }, row.getValue('phoneNumber')),
     enableSorting: false,
+    enableResizing: true,
   },
 
   {
@@ -47,6 +50,7 @@ export const columns: ColumnDef<User>[] = [
     filterFn: (row, id, value) => {
       return value.includes(row.getValue(id))
     },
+    enableResizing: true,
   },
 
   {
@@ -66,6 +70,7 @@ export const columns: ColumnDef<User>[] = [
       ])
     },
     enableSorting: false,
+    enableResizing: true,
   },
 
   {

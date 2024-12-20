@@ -35,7 +35,7 @@ function handleOpenChange() {
 <template>
   <div>
     <div
-      class="text-sm flex items-center justify-between text-muted-foreground border border-primary/5 bg-primary/5 px-4 py-2 rounded min-w-[280px] cursor-pointer"
+      class="text-sm flex items-center justify-between text-muted-foreground border border-primary/5 bg-primary/5 px-4 py-2 rounded min-w-[220px] cursor-pointer"
       @click="handleOpenChange"
     >
       <div class="flex items-center gap-2">

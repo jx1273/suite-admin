@@ -18,7 +18,8 @@ import { users } from './data/users'
       <InviteUser />
       <CreateUser />
     </template>
-
-    <DataTable class="mt-4" :data="users" :columns="columns" />
+    <div class="w-[calc(100svw-2rem)] md:w-full overflow-x-auto">
+      <DataTable class="mt-4" :data="users" :columns="columns" />
+    </div>
   </Page>
 </template>

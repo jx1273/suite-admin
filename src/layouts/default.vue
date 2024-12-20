@@ -10,12 +10,12 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/s
     <AppSidebar />
     <SidebarInset>
       <header
-        class="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
+        class="flex h-16 shrink-0 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
       >
-        <div class="flex items-center gap-2 px-4 w-full">
+        <div class="w-full flex items-center px-4 gap-1">
           <SidebarTrigger class="-ml-1" />
           <MenuSearch />
-          <div class="flex-1" />
+          <div class="min-w-0 flex-grow" />
           <ToggleTheme />
         </div>
       </header>

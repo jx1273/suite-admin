@@ -65,7 +65,7 @@ const table = useVueTable({
 
 <template>
   <div class="space-y-4">
-    <DataTableToolbar :table="table" />
+    <DataTableToolbar :table="table" class="w-full overflow-x-auto" />
     <div class="rounded-md border">
       <Table>
         <TableHeader>
