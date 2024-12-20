@@ -14,7 +14,7 @@ import TeamSwitcher from './TeamSwitcher.vue'
 </script>
 
 <template>
-  <Sidebar collapsible="icon">
+  <Sidebar collapsible="icon" class="z-50">
     <SidebarHeader>
       <TeamSwitcher :teams="sidebarData.teams" />
     </SidebarHeader>
