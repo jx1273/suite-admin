@@ -32,16 +32,21 @@ export function useSidebar() {
           url: '/apps',
           icon: Boxes,
         },
-        // {
-        //   title: 'Chats',
-        //   url: '/chats',
-        //   icon: MessagesSquare,
-        // },
         {
           title: 'Users',
           url: '/users',
           icon: Users,
         },
+        // {
+        //   title: 'articles-example',
+        //   url: '/articles-example',
+        //   icon: BookOpenText,
+        // },
+        // {
+        //   title: 'articles',
+        //   url: '/articles',
+        //   icon: BookOpenText,
+        // },
       ],
     },
     {
@@ -51,11 +56,11 @@ export function useSidebar() {
           title: 'Auth',
           icon: SquareUserRound,
           items: [
-            { title: 'Sign In', url: '/sign-in' },
-            { title: 'Sign In(2 Col)', url: '/sign-in-2' },
-            { title: 'Sign Up', url: '/sign-up' },
-            { title: 'Forgot Password', url: '/forgot-password' },
-            { title: 'OTP', url: '/otp' },
+            { title: 'Sign In', url: '/auth/sign-in' },
+            { title: 'Sign In(2 Col)', url: '/auth/sign-in-2' },
+            { title: 'Sign Up', url: '/auth/sign-up' },
+            { title: 'Forgot Password', url: '/auth/forgot-password' },
+            { title: 'OTP', url: '/auth/otp' },
           ],
         },
         {

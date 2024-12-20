@@ -7,16 +7,16 @@ import { Label } from '@/components/ui/label'
 </script>
 
 <template>
-  <div class="min-w-screen min-h-screen flex items-center justify-center">
-    <div class="flex flex-col gap-4">
+  <div class="min-w-screen min-h-screen flex items-center justify-center p-4">
+    <main class="flex flex-col gap-4">
       <AuthTitle />
-      <Card>
+      <Card class="w-full max-w-sm">
         <CardHeader>
           <CardTitle class="text-2xl">
-            Reset Password
+            Login
           </CardTitle>
           <CardDescription>
-            Enter your email below to reset your password.
+            Enter your email below to login to your account.
           </CardDescription>
         </CardHeader>
         <CardContent class="grid gap-4">
@@ -24,14 +24,18 @@ import { Label } from '@/components/ui/label'
             <Label for="email">Email</Label>
             <Input id="email" type="email" placeholder="m@example.com" required />
           </div>
+          <div class="grid gap-2">
+            <Label for="password">Password</Label>
+            <Input id="password" type="password" required />
+          </div>
         </CardContent>
-        <CardFooter class="">
+        <CardFooter>
           <Button class="w-full">
-            Reset Password
+            Sign in
           </Button>
         </CardFooter>
       </Card>
-    </div>
+    </main>
   </div>
 </template>
 
@@ -41,4 +45,4 @@ import { Label } from '@/components/ui/label'
 <route lang="yaml">
   meta:
     layout: blank
-  </route>
+</route>

@@ -7,7 +7,6 @@ import {
   PinInputGroup,
   PinInputInput,
 } from '@/components/ui/pin-input'
-import { ref } from 'vue'
 
 const value = ref<string[]>([])
 function handleComplete(e: string[]) {
@@ -17,10 +16,10 @@ function handleComplete(e: string[]) {
 </script>
 
 <template>
-  <div class="min-w-screen min-h-screen flex items-center justify-center">
-    <div class="flex flex-col gap-4">
+  <div class="min-w-screen min-h-screen flex items-center justify-center p-4">
+    <main class="flex flex-col gap-4">
       <AuthTitle />
-      <Card>
+      <Card class="w-full max-w-sm">
         <CardHeader>
           <CardTitle class="text-2xl">
             Two-Factor Authentication
@@ -54,10 +53,9 @@ function handleComplete(e: string[]) {
           <Button class="w-full">
             Verify
           </Button>
-          <p />
         </CardFooter>
       </Card>
-    </div>
+    </main>
   </div>
 </template>
 

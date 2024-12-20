@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 </script>
 
 <template>
-  <div class="min-w-screen min-h-screen flex items-center justify-center">
+  <div class="min-w-screen min-h-screen flex items-center justify-center p-4">
     <main class="flex flex-col gap-4">
       <AuthTitle />
       <Card class="mx-auto max-w-sm">
