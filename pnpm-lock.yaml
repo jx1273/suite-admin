@@ -71,6 +71,9 @@ importers:
       vee-validate:
         specifier: ^4.14.7
         version: 4.14.7(vue@3.5.13(typescript@5.6.3))
+      viewerjs:
+        specifier: ^1.11.7
+        version: 1.11.7
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.6.3)
@@ -4216,6 +4219,9 @@ packages:
     resolution: {integrity: sha512-XVb1gBFJR57equ11HEI8uxNqFJkwvCP/b+p+saDPQYaW7k45cdF5jsYPEJud1o29GD6h2y7Awm7Qfm89yKi74A==}
     peerDependencies:
       vue: ^3.4.26
+
+  viewerjs@1.11.7:
+    resolution: {integrity: sha512-0JuVqOmL5v1jmEAlG5EBDR3XquxY8DWFQbFMprOXgaBB0F7Q/X9xWdEaQc59D8xzwkdUgXEMSSknTpriq95igg==}
 
   vite-hot-client@0.2.4:
     resolution: {integrity: sha512-a1nzURqO7DDmnXqabFOliz908FRmIppkBKsJthS8rbe8hBEXwEwe4C3Pp33Z1JoFCYfVL4kTOMLKk0ZZxREIeA==}
@@ -9062,6 +9068,8 @@ snapshots:
       '@vue/devtools-api': 7.6.7
       type-fest: 4.30.0
       vue: 3.5.13(typescript@5.6.3)
+
+  viewerjs@1.11.7: {}
 
   vite-hot-client@0.2.4(vite@6.0.2(@types/node@22.10.1)(jiti@2.4.1)(yaml@2.6.1)):
     dependencies:
