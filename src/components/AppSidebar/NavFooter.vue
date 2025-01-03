@@ -77,9 +77,17 @@ const { logout } = useAuth()
 
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem>
+            <DropdownMenuItem @click="$router.push('/billing/')">
               <Sparkles />
               Upgrade to Pro
+            </DropdownMenuItem>
+          </DropdownMenuGroup>
+
+          <DropdownMenuSeparator />
+          <DropdownMenuGroup>
+            <DropdownMenuItem @click="$router.push('/billing?type=billing')">
+              <CreditCard />
+              Billing
             </DropdownMenuItem>
           </DropdownMenuGroup>
 
@@ -93,15 +101,7 @@ const { logout } = useAuth()
               <BadgeCheck />
               Account
             </DropdownMenuItem>
-          </DropdownMenuGroup>
-
-          <DropdownMenuSeparator />
-          <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <CreditCard />
-              Billing
-            </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem @click="$router.push('/settings/notifications')">
               <Bell />
               Notifications
             </DropdownMenuItem>

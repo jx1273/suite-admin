@@ -8,8 +8,8 @@ import {
 } from '@/components/ui/sidebar'
 import { sidebarData } from './data/sidebar-data'
 
+import NavFooter from './NavFooter.vue'
 import NavGroup from './NavGroup.vue'
-import NavUser from './NavUser.vue'
 import TeamSwitcher from './TeamSwitcher.vue'
 </script>
 
@@ -24,7 +24,7 @@ import TeamSwitcher from './TeamSwitcher.vue'
     </SidebarContent>
 
     <SidebarFooter>
-      <NavUser :user="sidebarData.user" />
+      <NavFooter :user="sidebarData.user" />
     </SidebarFooter>
 
     <SidebarRail />
