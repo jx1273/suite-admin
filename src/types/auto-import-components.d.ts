@@ -13,6 +13,7 @@ declare module 'vue' {
     AccordionAccordionTrigger: typeof import('./../components/ui/accordion/AccordionTrigger.vue')['default']
     AlertAlert: typeof import('./../components/ui/alert/Alert.vue')['default']
     AlertAlertDescription: typeof import('./../components/ui/alert/AlertDescription.vue')['default']
+    AlertAlertTitle: typeof import('./../components/ui/alert/AlertTitle.vue')['default']
     AutoFormAutoForm: typeof import('./../components/ui/auto-form/AutoForm.vue')['default']
     AutoFormAutoFormField: typeof import('./../components/ui/auto-form/AutoFormField.vue')['default']
     AutoFormAutoFormFieldArray: typeof import('./../components/ui/auto-form/AutoFormFieldArray.vue')['default']
