@@ -74,6 +74,7 @@ const { logout } = useAuth()
               </div>
             </div>
           </DropdownMenuLabel>
+
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem>
@@ -81,12 +82,21 @@ const { logout } = useAuth()
               Upgrade to Pro
             </DropdownMenuItem>
           </DropdownMenuGroup>
+
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem>
+            <DropdownMenuItem @click="$router.push('/settings/')">
+              <UserRoundCog />
+              Profile
+            </DropdownMenuItem>
+            <DropdownMenuItem @click="$router.push('/settings/account')">
               <BadgeCheck />
               Account
             </DropdownMenuItem>
+          </DropdownMenuGroup>
+
+          <DropdownMenuSeparator />
+          <DropdownMenuGroup>
             <DropdownMenuItem>
               <CreditCard />
               Billing
@@ -95,11 +105,8 @@ const { logout } = useAuth()
               <Bell />
               Notifications
             </DropdownMenuItem>
-            <DropdownMenuItem @click="$router.push('/settings/user-settings')">
-              <UserRoundCog />
-              User Settings
-            </DropdownMenuItem>
           </DropdownMenuGroup>
+
           <DropdownMenuSeparator />
           <DropdownMenuItem @click="logout">
             <LogOut />
