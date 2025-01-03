@@ -11,7 +11,7 @@ defineProps<{ app: IApp }>()
     <CardHeader>
       <div class="flex items-center justify-between">
         <div
-          class="flex size-10 items-center justify-center rounded-lg bg-muted p-2"
+          class="flex items-center justify-center p-2 rounded-lg size-10 bg-muted"
         >
           <img :src="app.logo" alt="" class="w-full h-full rounded-md">
         </div>

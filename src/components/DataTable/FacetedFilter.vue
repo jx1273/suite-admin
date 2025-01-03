@@ -3,7 +3,6 @@ import type { Column } from '@tanstack/vue-table'
 import type { FacetedFilterOption } from './types'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from '@/components/ui/command'
 import {
   Popover,
@@ -31,13 +30,13 @@ const filterFunction = (list: DataTableFacetedFilter['options'], term: string) =
   <Popover>
     <PopoverTrigger as-child>
       <Button variant="outline" size="sm" class="h-8 border-dashed">
-        <CirclePlus class="mr-2 h-4 w-4" />
+        <CirclePlus class="w-4 h-4 mr-2" />
         {{ title }}
         <template v-if="selectedValues.size > 0">
-          <Separator orientation="vertical" class="mx-2 h-4" />
+          <Separator orientation="vertical" class="h-4 mx-2" />
           <Badge
             variant="secondary"
-            class="rounded-sm px-1 font-normal lg:hidden"
+            class="px-1 font-normal rounded-sm lg:hidden"
           >
             {{ selectedValues.size }}
           </Badge>
@@ -45,7 +44,7 @@ const filterFunction = (list: DataTableFacetedFilter['options'], term: string) =
             <Badge
               v-if="selectedValues.size > 2"
               variant="secondary"
-              class="rounded-sm px-1 font-normal"
+              class="px-1 font-normal rounded-sm"
             >
               {{ selectedValues.size }} selected
             </Badge>
@@ -56,7 +55,7 @@ const filterFunction = (list: DataTableFacetedFilter['options'], term: string) =
                   .filter((option) => selectedValues.has(option.value))"
                 :key="option.value"
                 variant="secondary"
-                class="rounded-sm px-1 font-normal"
+                class="px-1 font-normal rounded-sm"
               >
                 {{ option.label }}
               </Badge>
@@ -102,9 +101,9 @@ const filterFunction = (list: DataTableFacetedFilter['options'], term: string) =
               >
                 <Check :class="cn('h-4 w-4')" />
               </div>
-              <component :is="option.icon" v-if="option.icon" class="mr-2 h-4 w-4 text-muted-foreground" />
+              <component :is="option.icon" v-if="option.icon" class="w-4 h-4 mr-2 text-muted-foreground" />
               <span>{{ option.label }}</span>
-              <span v-if="facets?.get(option.value)" class="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs">
+              <span v-if="facets?.get(option.value)" class="flex items-center justify-center w-4 h-4 ml-auto font-mono text-xs">
                 {{ facets.get(option.value) }}
               </span>
             </CommandItem>

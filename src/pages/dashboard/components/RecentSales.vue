@@ -24,7 +24,7 @@ const list = ref<User[]>([
         <AvatarImage :src="item.avatar" alt="Avatar" />
         <AvatarFallback>{{ item.name[0].toUpperCase() }}</AvatarFallback>
       </Avatar>
-      <div class="flex flex-1 flex-wrap items-center justify-between">
+      <div class="flex flex-wrap items-center justify-between flex-1">
         <div class="space-y-1">
           <p class="text-sm font-medium leading-none">
             {{ item.name }}

@@ -39,13 +39,13 @@ function setActiveTeam(team: Team) {
             class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
           >
             <div
-              class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"
+              class="flex items-center justify-center rounded-lg aspect-square size-8 bg-sidebar-primary text-sidebar-primary-foreground"
             >
               <component :is="activeTeam.logo" class="size-4" />
             </div>
-            <div class="grid flex-1 text-left text-sm leading-tight">
-              <span class="truncate font-semibold">{{ activeTeam.name }}</span>
-              <span class="truncate text-xs">{{ activeTeam.plan }}</span>
+            <div class="grid flex-1 text-sm leading-tight text-left">
+              <span class="font-semibold truncate">{{ activeTeam.name }}</span>
+              <span class="text-xs truncate">{{ activeTeam.plan }}</span>
             </div>
             <ChevronsUpDown class="ml-auto" />
           </SidebarMenuButton>
@@ -65,7 +65,7 @@ function setActiveTeam(team: Team) {
             class="gap-2 p-2"
             @click="setActiveTeam(team)"
           >
-            <div class="flex size-6 items-center justify-center rounded-sm border">
+            <div class="flex items-center justify-center border rounded-sm size-6">
               <component :is="team.logo" class="size-4 shrink-0" />
             </div>
             {{ team.name }}
@@ -73,7 +73,7 @@ function setActiveTeam(team: Team) {
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem class="gap-2 p-2">
-            <div class="flex size-6 items-center justify-center rounded-md border bg-background">
+            <div class="flex items-center justify-center border rounded-md size-6 bg-background">
               <Plus class="size-4" />
             </div>
             <div class="font-medium text-muted-foreground">

@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <div class="flex items-center gap-4">
-    <Avatar class="h-12 w-12">
+    <Avatar class="w-12 h-12">
       <AvatarImage :src="user.avatar" :alt="user.name" />
       <AvatarFallback>
         {{ user.name[0].toUpperCase() }}

@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 
 <template>
   <div class="w-full h-screen lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
-    <div class="hidden bg-muted lg:block relative">
+    <div class="relative hidden bg-muted lg:block">
       <img
         src="/placeholder.png"
         alt="Image"
@@ -15,7 +15,7 @@ import { Label } from '@/components/ui/label'
         height="1080"
         class="h-full w-full object-cover dark:brightness-[0.3] dark:grayscale absolute left-0 top-0 "
       >
-      <AuthTitle class="z-10 absolute left-8 top-8" />
+      <AuthTitle class="absolute z-10 left-8 top-8" />
     </div>
 
     <div class="flex items-center justify-center py-12">
@@ -43,7 +43,7 @@ import { Label } from '@/components/ui/label'
               <Label for="password">Password</Label>
               <a
                 href="/forgot-password"
-                class="ml-auto inline-block text-sm underline"
+                class="inline-block ml-auto text-sm underline"
               >
                 Forgot your password?
               </a>
@@ -57,7 +57,7 @@ import { Label } from '@/components/ui/label'
             Login with Google
           </Button>
         </div>
-        <div class="mt-4 text-center text-sm">
+        <div class="mt-4 text-sm text-center">
           Don't have an account?
           <a href="#" class="underline">
             Sign up

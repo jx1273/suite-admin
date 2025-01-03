@@ -3,7 +3,7 @@ import Error from '@/components/Error.vue'
 </script>
 
 <template>
-  <div class="flex h-screen items-center justify-center">
+  <div class="flex items-center justify-center h-screen">
     <Error
       :code="404"
       subtitle="Page Not Found"

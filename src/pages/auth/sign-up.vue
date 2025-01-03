@@ -7,10 +7,10 @@ import { Label } from '@/components/ui/label'
 </script>
 
 <template>
-  <div class="min-w-screen min-h-screen flex items-center justify-center p-4">
+  <div class="flex items-center justify-center min-h-screen p-4 min-w-screen">
     <main class="flex flex-col gap-4">
       <AuthTitle />
-      <Card class="mx-auto max-w-sm">
+      <Card class="max-w-sm mx-auto">
         <CardHeader>
           <CardTitle class="text-xl">
             Sign Up
@@ -51,7 +51,7 @@ import { Label } from '@/components/ui/label'
               Sign up with GitHub
             </Button>
           </div>
-          <div class="mt-4 text-center text-sm">
+          <div class="mt-4 text-sm text-center">
             Already have an account?
             <a href="#" class="underline">
               Sign in

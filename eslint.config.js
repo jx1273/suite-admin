@@ -1,4 +1,5 @@
 import antfu from '@antfu/eslint-config'
+import eslintPluginTailwindcss from 'eslint-plugin-tailwindcss'
 
 export default antfu({
   ignores: [
@@ -7,4 +8,5 @@ export default antfu({
     '**/build/**',
     '**/lib/**',
   ],
+  ...eslintPluginTailwindcss.configs['flat/recommended'],
 })

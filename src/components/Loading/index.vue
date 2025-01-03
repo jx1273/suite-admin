@@ -3,7 +3,7 @@ import { LoaderCircle } from 'lucide-vue-next'
 </script>
 
 <template>
-  <LoaderCircle class="animate-spin w-24 h-24" />
+  <LoaderCircle class="w-24 h-24 animate-spin" />
 </template>
 
 <style scoped>

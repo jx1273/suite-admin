@@ -37,16 +37,6 @@ export function useSidebar() {
           url: '/users',
           icon: Users,
         },
-        // {
-        //   title: 'articles-example',
-        //   url: '/articles-example',
-        //   icon: BookOpenText,
-        // },
-        // {
-        //   title: 'articles',
-        //   url: '/articles',
-        //   icon: BookOpenText,
-        // },
       ],
     },
     {

@@ -12,15 +12,15 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/s
       <header
         class="flex h-16 shrink-0 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
       >
-        <div class="w-full flex items-center px-4 gap-1">
+        <div class="flex items-center w-full gap-1 px-4">
           <SidebarTrigger class="-ml-1" />
           <MenuSearch />
-          <div class="min-w-0 flex-grow" />
+          <div class="flex-grow min-w-0" />
           <ToggleTheme />
         </div>
       </header>
       <div
-        class="flex flex-1 flex-col gap-4 p-4 pt-0"
+        class="flex flex-col flex-1 gap-4 p-4 pt-0"
       >
         <router-view />
       </div>

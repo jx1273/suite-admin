@@ -36,7 +36,7 @@ const task = computed(() => taskSchema.parse(props.row.original))
         variant="ghost"
         class="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
       >
-        <Ellipsis class="h-4 w-4" />
+        <Ellipsis class="w-4 h-4" />
         <span class="sr-only">Open menu</span>
       </Button>
     </DropdownMenuTrigger>

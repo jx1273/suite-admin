@@ -21,7 +21,7 @@ const isFiltered = computed(() => props.table.getState().columnFilters.length > 
 
 <template>
   <div class="flex items-center justify-between">
-    <div class="flex flex-1 items-center space-x-2">
+    <div class="flex items-center flex-1 space-x-2">
       <Input
         placeholder="Filter tasks..."
         :model-value="(table.getColumn('username')?.getFilterValue() as string) ?? ''"
@@ -48,7 +48,7 @@ const isFiltered = computed(() => props.table.getState().columnFilters.length > 
         @click="table.resetColumnFilters()"
       >
         Reset
-        <X class="ml-2 h-4 w-4" />
+        <X class="w-4 h-4 ml-2" />
       </Button>
     </div>
     <DataTableViewOptions :table="table" />

@@ -9,11 +9,11 @@ defineProps<{
 </script>
 
 <template>
-  <div class="text-center max-w-2xl mx-auto">
-    <h1 class="text-8xl font-bold">
+  <div class="max-w-2xl mx-auto text-center">
+    <h1 class="font-bold text-8xl">
       {{ code }}
     </h1>
-    <h2 class="text-2xl font-bold mt-4">
+    <h2 class="mt-4 text-2xl font-bold">
       {{ subtitle }}
     </h2>
     <p class="text-stone-400">
@@ -22,7 +22,7 @@ defineProps<{
 
     <footer class="mt-8">
       <slot>
-        <div class="flex gap-2 justify-center">
+        <div class="flex justify-center gap-2">
           <Button variant="outline" @click="$router.back()">
             Go Back
           </Button>

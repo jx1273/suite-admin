@@ -44,7 +44,7 @@ watch(appType, (newValue) => {
     description="Apps description"
     sticky
   >
-    <div class="my-4 flex items-end justify-between sm:my-0 sm:items-center">
+    <div class="flex items-end justify-between my-4 sm:my-0 sm:items-center">
       <div class="flex flex-col gap-4 sm:my-4 sm:flex-row">
         <Input
           v-model:model-value="searchTerm"
@@ -67,7 +67,7 @@ watch(appType, (newValue) => {
 
       <Sort v-model:sort="sort" />
     </div>
-    <main class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <main class="grid grid-cols-1 gap-4 lg:grid-cols-3">
       <AppCard
         v-for="app in appList" :key="app.id"
         :app="app"

@@ -52,6 +52,7 @@
     "@vitejs/plugin-vue-jsx": "^4.1.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.16.0",
+    "eslint-plugin-tailwindcss": "^3.17.5",
     "lint-staged": "^15.2.11",
     "release-it": "^17.10.0",
     "release-it-pnpm": "^4.6.3",

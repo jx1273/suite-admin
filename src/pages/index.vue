@@ -7,7 +7,7 @@ router.push({ name: 'dashboard' })
 </script>
 
 <template>
-  <div class="w-screen h-screen flex items-center justify-center">
+  <div class="flex items-center justify-center w-screen h-screen">
     <Loading />
   </div>
 </template>

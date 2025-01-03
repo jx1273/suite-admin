@@ -31,9 +31,9 @@ const columns = computed(() => props.table.getAllColumns()
       <Button
         variant="outline"
         size="sm"
-        class="ml-auto hidden h-8 lg:flex"
+        class="hidden h-8 ml-auto lg:flex"
       >
-        <CircleArrowDown class="mr-2 h-4 w-4" />
+        <CircleArrowDown class="w-4 h-4 mr-2" />
         View
       </Button>
     </DropdownMenuTrigger>

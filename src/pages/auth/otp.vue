@@ -16,7 +16,7 @@ function handleComplete(e: string[]) {
 </script>
 
 <template>
-  <div class="min-w-screen min-h-screen flex items-center justify-center p-4">
+  <div class="flex items-center justify-center min-h-screen p-4 min-w-screen">
     <main class="flex flex-col gap-4">
       <AuthTitle />
       <Card class="w-full max-w-sm">
@@ -30,7 +30,7 @@ function handleComplete(e: string[]) {
           </CardDescription>
         </CardHeader>
         <CardContent class="grid gap-4">
-          <div class="grid gap-2 items-center justify-center">
+          <div class="grid items-center justify-center gap-2">
             <PinInput
               id="pin-input"
               v-model="value"

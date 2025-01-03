@@ -35,9 +35,9 @@ export default {
           class="-ml-3 h-8 data-[state=open]:bg-accent"
         >
           <span>{{ title }}</span>
-          <ArrowDown v-if="column.getIsSorted() === 'desc'" class="ml-2 h-4 w-4" />
-          <ArrowUp v-else-if=" column.getIsSorted() === 'asc'" class="ml-2 h-4 w-4" />
-          <ChevronsDownUp v-else class="ml-2 h-4 w-4" />
+          <ArrowDown v-if="column.getIsSorted() === 'desc'" class="w-4 h-4 ml-2" />
+          <ArrowUp v-else-if=" column.getIsSorted() === 'asc'" class="w-4 h-4 ml-2" />
+          <ChevronsDownUp v-else class="w-4 h-4 ml-2" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">

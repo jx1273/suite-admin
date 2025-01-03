@@ -56,7 +56,7 @@ const onSubmit = handleSubmit((values) => {
 
             <div class="space-y-4">
               <FormField v-slot="{ value, handleChange }" name="marketing_emails">
-                <FormItem class="flex flex-row items-center justify-between rounded-lg border p-4">
+                <FormItem class="flex flex-row items-center justify-between p-4 border rounded-lg">
                   <div class="space-y-0.5">
                     <FormLabel class="text-base">
                       Marketing emails
@@ -74,7 +74,7 @@ const onSubmit = handleSubmit((values) => {
                 </FormItem>
               </FormField>
               <FormField v-slot="{ value, handleChange }" name="security_emails">
-                <FormItem class="flex flex-row items-center justify-between rounded-lg border p-4">
+                <FormItem class="flex flex-row items-center justify-between p-4 border rounded-lg">
                   <div class="space-y-0.5">
                     <FormLabel class="text-base">
                       Security emails

@@ -35,7 +35,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <ul ref="images" class="cursor-pointer rounded-md overflow-hidden">
+  <ul ref="images" class="overflow-hidden rounded-md cursor-pointer">
     <li v-for="img in imageList" :key="img.src">
       <img :src="img.src" :alt="img.alt">
     </li>

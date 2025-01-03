@@ -40,7 +40,7 @@ function handleOpenChange() {
     >
       <div class="flex items-center gap-2">
         <Search class="w-4 h-4" />
-        <span class="font-semibold text-xs text-primary/30">Search Menu</span>
+        <span class="text-xs font-semibold text-primary/30">Search Menu</span>
       </div>
       <kbd
         class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
