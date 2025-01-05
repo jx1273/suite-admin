@@ -49,9 +49,9 @@ export default defineConfig({
     }),
     Component({
       dirs: [
-        'src/components/ui',
-        'src/components/inspira-ui',
-      ], // 要自动引入组件的目录
+        'src/components',
+      ],
+      collapseSamePrefixes: true,
       directoryAsNamespace: true, // 包含文件夹名称，避免命名冲突
       dts: 'src/types/auto-import-components.d.ts', // 类型提示文件
     }),
