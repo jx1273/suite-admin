@@ -28,6 +28,8 @@ declare module 'vue' {
     SearchCommandToPage: typeof import('./../components/Search/CommandToPage.vue')['default']
     SearchMenu: typeof import('./../components/Search/Menu.vue')['default']
     Sort: typeof import('./../components/Sort/index.vue')['default']
+    ThemingThemeCustomizer: typeof import('./../components/Theming/ThemeCustomizer.vue')['default']
+    ThemingThemePopover: typeof import('./../components/Theming/ThemePopover.vue')['default']
     ToggleTheme: typeof import('./../components/ToggleTheme.vue')['default']
     UiAccordion: typeof import('./../components/ui/accordion/Accordion.vue')['default']
     UiAccordionContent: typeof import('./../components/ui/accordion/AccordionContent.vue')['default']

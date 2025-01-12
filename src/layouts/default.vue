@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppSidebar from '@/components/AppSidebar/index.vue'
 import MenuSearch from '@/components/Search/Menu.vue'
+import ThemePopover from '@/components/Theming/ThemePopover.vue'
 import ToggleTheme from '@/components/ToggleTheme.vue'
 import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 </script>
@@ -17,6 +18,7 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/s
           <MenuSearch />
           <div class="flex-grow min-w-0" />
           <ToggleTheme />
+          <ThemePopover />
         </div>
       </header>
       <div
