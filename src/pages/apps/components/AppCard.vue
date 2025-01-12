@@ -13,7 +13,7 @@ defineProps<{ app: IApp }>()
         <div
           class="flex items-center justify-center p-2 rounded-lg size-10 bg-muted"
         >
-          <img :src="app.logo" alt="" class="w-full h-full rounded-md">
+          <component :is="app.logo" />
         </div>
         <Button
           :variant="app.connected ? 'secondary' : 'outline'"

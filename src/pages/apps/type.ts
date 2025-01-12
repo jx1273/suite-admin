@@ -1,7 +1,8 @@
+import type { Component } from 'vue'
+
 export interface IApp {
-  id: number
   name: string
-  logo: string
+  logo: Component
   desc: string
   connected: boolean
 }

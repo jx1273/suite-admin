@@ -27,6 +27,23 @@ const appTypes: AppType[] = [
 
 const sort = ref<TSort>('asc')
 
+watch(searchTerm, (newValue) => {
+  if (!newValue)
+    appList.value = apps
+
+  appList.value = apps.filter((app) => {
+    return app.name.toLowerCase().includes(newValue.toLowerCase())
+  })
+})
+
+watch(sort, (newValue) => {
+  appList.value = apps.sort((a, b) => {
+    if (newValue === 'asc')
+      return a.name.localeCompare(b.name)
+    return b.name.localeCompare(a.name)
+  })
+})
+
 watch(appType, (newValue) => {
   appList.value = apps.filter((app) => {
     if (newValue === 'all')
@@ -50,7 +67,6 @@ watch(appType, (newValue) => {
           v-model:model-value="searchTerm"
           placeholder="Filter apps..."
           class="h-9 w-40 lg:w-[250px]"
-          @change="appList = apps.filter((app) => app.name.toLowerCase().includes(searchTerm.toLowerCase()))"
         />
 
         <Select v-model:model-value="appType">
@@ -69,7 +85,7 @@ watch(appType, (newValue) => {
     </div>
     <main class="grid grid-cols-1 gap-4 mt-2 lg:grid-cols-3">
       <AppCard
-        v-for="app in appList" :key="app.id"
+        v-for="(app, index) in appList" :key="index"
         :app="app"
       />
     </main>
