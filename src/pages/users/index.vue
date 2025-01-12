@@ -19,7 +19,7 @@ import { users } from './data/users'
       <CreateUser />
     </template>
     <div class="w-[calc(100svw-2rem)] md:w-full overflow-x-auto">
-      <DataTable class="mt-4" :data="users" :columns="columns" />
+      <DataTable :data="users" :columns="columns" />
     </div>
   </Page>
 </template>

@@ -12,7 +12,7 @@ import tasks from './data/tasks.json'
     sticky
   >
     <div class="w-[calc(100svw-2rem)] md:w-full overflow-x-auto">
-      <DataTable class="mt-4" :data="tasks" :columns="columns" />
+      <DataTable :data="tasks" :columns="columns" />
     </div>
   </Page>
 </template>

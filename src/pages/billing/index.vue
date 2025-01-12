@@ -14,7 +14,7 @@ const type = computed(() => (route.query.type as 'plans' | 'billing') || 'plans'
     title="Plans & Billing"
     description="Manage your plan and billing history here."
   >
-    <Tabs :default-value="type" class="mt-4">
+    <Tabs :default-value="type">
       <TabsList>
         <TabsTrigger value="plans">
           Plans

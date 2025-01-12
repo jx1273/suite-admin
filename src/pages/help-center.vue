@@ -20,7 +20,7 @@ const socialMediaAccounts = ref<ISocialMediaAccount[]>([
     title="Help Center"
     description="Help Center description"
   >
-    <Alert class="mt-4">
+    <Alert>
       <AlertTitle>Heads up!</AlertTitle>
       <AlertDescription>
         You can find answers to your questions in our help center.
