@@ -2,6 +2,14 @@
 import AutoForm from '@/components/ui/auto-form/AutoForm.vue'
 import Button from '@/components/ui/button/Button.vue'
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import {
   Drawer,
   DrawerClose,
   DrawerContent,
@@ -12,8 +20,14 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer'
 import { toast } from '@/components/ui/toast'
+import { createReusableTemplate, useMediaQuery } from '@vueuse/core'
 import { UserRoundPlus } from 'lucide-vue-next'
 import { z } from 'zod'
+
+const [UseTemplate, GridForm] = createReusableTemplate()
+const isDesktop = useMediaQuery('(min-width: 768px)')
+
+const isOpen = ref(false)
 
 const schema = z.object({
   firstName: z.string(),
@@ -42,7 +56,60 @@ function onSubmit(values: Record<string, any>) {
 </script>
 
 <template>
-  <Drawer>
+  <UseTemplate>
+    <AutoForm
+      v-auto-animate
+      class="max-h-[500px] overflow-y-auto"
+      :schema="schema"
+      :field-config="{
+        email: {
+          label: 'Email address',
+          inputProps: {
+            type: 'email',
+          },
+        },
+        password: {
+          label: 'Password',
+          inputProps: {
+            type: 'password',
+          },
+        },
+        confirm: {
+          label: 'Password',
+          inputProps: {
+            type: 'password',
+          },
+        },
+      }"
+      @submit="onSubmit"
+    >
+      <div class="flex items-center justify-end space-x-2">
+        <Button type="submit" class="w-full">
+          SaveChanges
+        </Button>
+      </div>
+    </AutoForm>
+  </UseTemplate>
+
+  <Dialog v-if="isDesktop" v-model:open="isOpen">
+    <DialogTrigger as-child>
+      <Button>
+        Create User
+        <UserRoundPlus />
+      </Button>
+    </DialogTrigger>
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle>Create User</DialogTitle>
+        <DialogDescription>
+          Enter the required information below to create a new user.
+        </DialogDescription>
+      </DialogHeader>
+      <GridForm />
+    </DialogContent>
+  </Dialog>
+
+  <Drawer v-else v-model:open="isOpen">
     <DrawerTrigger as-child>
       <Button>
         Create User
@@ -56,48 +123,14 @@ function onSubmit(values: Record<string, any>) {
           Enter the required information below to create a new user.
         </DrawerDescription>
       </DrawerHeader>
-      <AutoForm
-        v-auto-animate
-        class="container mx-auto space-y-6 max-h-[500px] overflow-y-auto"
-        :schema="schema"
-        :field-config="{
-          email: {
-            label: 'Email address',
-            inputProps: {
-              type: 'email',
-            },
-          },
-          password: {
-            label: 'Password',
-            inputProps: {
-              type: 'password',
-            },
-          },
-          confirm: {
-            label: 'Password',
-            inputProps: {
-              type: 'password',
-            },
-          },
-        }"
-        @submit="onSubmit"
-      >
-        <DrawerFooter>
-          <div class="flex items-center justify-end space-x-2">
-            <Button variant="outline" type="reset" class="w-full">
-              Reset
-            </Button>
-            <Button type="submit" class="w-full">
-              SaveChanges
-            </Button>
-          </div>
-          <DrawerClose>
-            <Button variant="outline" class="w-full">
-              Close
-            </Button>
-          </DrawerClose>
-        </DrawerFooter>
-      </AutoForm>
+      <GridForm />
+      <DrawerFooter class="pt-2">
+        <DrawerClose as-child>
+          <Button variant="outline">
+            Cancel
+          </Button>
+        </DrawerClose>
+      </DrawerFooter>
     </DrawerContent>
   </Drawer>
 </template>
