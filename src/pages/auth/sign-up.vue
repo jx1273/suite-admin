@@ -4,6 +4,11 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { Separator } from '@/components/ui/separator'
+import GitHubButton from './components/GitHubButton.vue'
+import GoogleButton from './components/GoogleButton.vue'
+import PrivacyPolicyButton from './components/PrivacyPolicyButton.vue'
+import TermsOfServiceButton from './components/TermsOfServiceButton.vue'
 </script>
 
 <template>
@@ -16,7 +21,14 @@ import { Label } from '@/components/ui/label'
             Sign Up
           </CardTitle>
           <CardDescription>
-            Enter your information to create an account
+            Enter your email and password to create an account.
+            Already have an account?
+            <Button
+              variant="link" class="px-0 text-muted-foreground"
+              @click="$router.push('/auth/sign-in')"
+            >
+              Sign In
+            </Button>
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -42,20 +54,29 @@ import { Label } from '@/components/ui/label'
             </div>
             <div class="grid gap-2">
               <Label for="password">Password</Label>
-              <Input id="password" type="password" />
+              <Input id="password" type="password" placeholder="******" />
+            </div>
+            <div class="grid gap-2">
+              <Label for="password">Confirm Password</Label>
+              <Input id="password" type="password" placeholder="******" />
             </div>
             <Button type="submit" class="w-full">
-              Create an account
+              Create Account
             </Button>
-            <Button variant="outline" class="w-full">
-              Sign up with GitHub
-            </Button>
-          </div>
-          <div class="mt-4 text-sm text-center">
-            Already have an account?
-            <a href="#" class="underline">
-              Sign in
-            </a>
+
+            <Separator label="Or continue with" />
+
+            <div class="flex items-center justify-between gap-4">
+              <GitHubButton />
+              <GoogleButton />
+            </div>
+
+            <CardDescription>
+              By creating an account, you agree to our
+              <TermsOfServiceButton />
+              and
+              <PrivacyPolicyButton />
+            </CardDescription>
           </div>
         </CardContent>
       </Card>

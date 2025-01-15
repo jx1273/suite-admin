@@ -25,8 +25,7 @@ function handleComplete(e: string[]) {
             Two-Factor Authentication
           </CardTitle>
           <CardDescription>
-            <p>Please enter the authentication code.</p>
-            <p>We have sent the authentication code to your email.</p>
+            Please enter the authentication code.We have sent the authentication code to your email.
           </CardDescription>
         </CardHeader>
         <CardContent class="grid gap-4">
@@ -49,10 +48,17 @@ function handleComplete(e: string[]) {
             </PinInput>
           </div>
         </CardContent>
-        <CardFooter class="">
-          <Button class="w-full">
+        <CardFooter class="flex flex-col gap-2">
+          <Button class="w-full" :disabled="value.length < 6">
             Verify
           </Button>
+
+          <CardDescription>
+            Haven't received it?
+            <Button variant="link" class="px-0 text-muted-foreground">
+              Resend a new code.
+            </Button>
+          </CardDescription>
         </CardFooter>
       </Card>
     </main>

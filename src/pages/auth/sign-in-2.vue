@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import AuthTitle from '@/components/AuthTitle.vue'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import LoginForm from './components/LoginForm.vue'
 </script>
 
 <template>
@@ -20,49 +18,7 @@ import { Label } from '@/components/ui/label'
 
     <div class="flex items-center justify-center py-12">
       <div class="mx-auto grid w-[350px] gap-6">
-        <div class="grid gap-2 text-center">
-          <h1 class="text-3xl font-bold">
-            Login
-          </h1>
-          <p class="text-balance text-muted-foreground">
-            Enter your email below to login to your account
-          </p>
-        </div>
-        <div class="grid gap-4">
-          <div class="grid gap-2">
-            <Label for="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="m@example.com"
-              required
-            />
-          </div>
-          <div class="grid gap-2">
-            <div class="flex items-center">
-              <Label for="password">Password</Label>
-              <a
-                href="/forgot-password"
-                class="inline-block ml-auto text-sm underline"
-              >
-                Forgot your password?
-              </a>
-            </div>
-            <Input id="password" type="password" required />
-          </div>
-          <Button type="submit" class="w-full">
-            Login
-          </Button>
-          <Button variant="outline" class="w-full">
-            Login with Google
-          </Button>
-        </div>
-        <div class="mt-4 text-sm text-center">
-          Don't have an account?
-          <a href="#" class="underline">
-            Sign up
-          </a>
-        </div>
+        <LoginForm class="border-0 shadow-none" />
       </div>
     </div>
   </div>

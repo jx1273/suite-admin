@@ -13,10 +13,10 @@ import { Label } from '@/components/ui/label'
       <Card>
         <CardHeader>
           <CardTitle class="text-2xl">
-            Reset Password
+            Forgot Password
           </CardTitle>
           <CardDescription>
-            Enter your email below to reset your password.
+            Enter your registered email and we will send you a link to reset your password.
           </CardDescription>
         </CardHeader>
         <CardContent class="grid gap-4">
@@ -25,10 +25,20 @@ import { Label } from '@/components/ui/label'
             <Input id="email" type="email" placeholder="m@example.com" required />
           </div>
         </CardContent>
-        <CardFooter class="">
+        <CardFooter class="flex flex-col gap-2">
           <Button class="w-full">
-            Reset Password
+            Continue
           </Button>
+
+          <div>
+            Don't have an account?
+            <Button
+              variant="link" class="px-0 text-muted-foreground"
+              @click="$router.push('/auth/sign-up')"
+            >
+              Sign up.
+            </Button>
+          </div>
         </CardFooter>
       </Card>
     </main>
