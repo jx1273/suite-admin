@@ -3,6 +3,7 @@ import { setupAutoAnimate } from './autoAnimate'
 import { setupDayjs } from './dayjs'
 import { setupI18n } from './i18n'
 import { setupNProgress } from './nprogress'
+import { setupPinia } from './pinia'
 import { setupTanstackVueQuery } from './tanstack-vue-query'
 
 export function setupPlugins(app: App) {
@@ -11,4 +12,5 @@ export function setupPlugins(app: App) {
   setupAutoAnimate(app)
   setupTanstackVueQuery(app)
   setupI18n(app)
+  setupPinia(app)
 }

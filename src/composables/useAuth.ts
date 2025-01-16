@@ -4,7 +4,7 @@ export function useAuth() {
   const router = useRouter()
 
   function logout() {
-    router.push({ path: '/auth/login' })
+    router.push({ path: RouterPath.LOGIN })
   }
 
   function toHome() {

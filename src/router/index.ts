@@ -1,7 +1,7 @@
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createRouter, createWebHistory } from 'vue-router'
-// import { autoLoadModuleRoutes } from './utils/autoLoad'
 import generatedRoutes from '~pages'
+import { createRouterGuard } from './guard'
 
 const routes = setupLayouts(generatedRoutes)
 const router = createRouter({
@@ -11,5 +11,7 @@ const router = createRouter({
     return { left: 0, top: 0, behavior: 'smooth' }
   },
 })
+
+createRouterGuard(router)
 
 export default router
