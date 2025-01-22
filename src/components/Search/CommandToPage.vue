@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { RouteLocationAsRelativeGeneric } from 'vue-router'
 import type { NavGroup, NavItem } from '../AppSidebar/types'
 import {
   CommandGroup,
@@ -7,6 +6,10 @@ import {
 } from '@/components/ui/command'
 import { useSidebar } from '@/composables/useSidebar'
 import CommandItemHasIcon from './CommandItemHasIcon.vue'
+
+const emit = defineEmits<{
+  (e: 'click'): void
+}>()
 
 const { navData } = useSidebar()
 
@@ -26,6 +29,15 @@ function getFlatNavItems(navData: NavGroup[]): NavItem[] {
 }
 
 const commands = getFlatNavItems(navData.value!)
+
+const router = useRouter()
+const route = useRoute()
+function commandItemClick(url: string) {
+  emit('click')
+  if (route.fullPath !== url) {
+    router.push(url)
+  }
+}
 </script>
 
 <template>
@@ -34,7 +46,7 @@ const commands = getFlatNavItems(navData.value!)
       v-for="command in commands"
       :key="command.title"
       :value="command.title"
-      @click="$router.push(command.url as unknown as RouteLocationAsRelativeGeneric)"
+      @click="commandItemClick(command.url!)"
     >
       <CommandItemHasIcon :name="command.title" :icon="command.icon" />
     </CommandItem>

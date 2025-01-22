@@ -30,6 +30,8 @@ watch([Meta_K, Ctrl_K], (v) => {
 function handleOpenChange() {
   open.value = !open.value
 }
+
+const firstKey = computed(() => navigator?.userAgent.includes('Mac OS') ? '⌘' : 'Ctrl')
 </script>
 
 <template>
@@ -45,7 +47,7 @@ function handleOpenChange() {
       <kbd
         class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-primary/5 px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
       >
-        <span class="text-xs">⌘</span>K
+        <span class="text-xs">{{ firstKey }}</span>K
       </kbd>
     </div>
 
@@ -56,9 +58,9 @@ function handleOpenChange() {
           No results found.
         </CommandEmpty>
 
-        <CommandToPage />
+        <CommandToPage @click="handleOpenChange" />
         <CommandSeparator />
-        <CommandChangeTheme />
+        <CommandChangeTheme @click="handleOpenChange" />
       </CommandList>
     </CommandDialog>
   </div>
