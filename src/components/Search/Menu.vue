@@ -33,7 +33,7 @@ function handleOpenChange() {
 </script>
 
 <template>
-  <div>
+  <div class="theme-stone dark:dark">
     <div
       class="text-sm flex items-center justify-between text-muted-foreground border border-primary/5 bg-primary/5 px-4 py-2 rounded min-w-[220px] cursor-pointer"
       @click="handleOpenChange"
@@ -43,7 +43,7 @@ function handleOpenChange() {
         <span class="text-xs font-semibold text-primary/30">Search Menu</span>
       </div>
       <kbd
-        class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
+        class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-primary/5 px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
       >
         <span class="text-xs">⌘</span>K
       </kbd>
