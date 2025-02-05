@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { CircleArrowDown } from 'lucide-vue-next'
+import { Settings2 } from 'lucide-vue-next'
 import { computed } from 'vue'
 
 interface DataTableViewOptionsProps {
@@ -33,7 +33,7 @@ const columns = computed(() => props.table.getAllColumns()
         size="sm"
         class="hidden h-8 ml-auto lg:flex"
       >
-        <CircleArrowDown class="w-4 h-4 mr-2" />
+        <Settings2 class="w-4 h-4 mr-2" />
         View
       </Button>
     </DropdownMenuTrigger>

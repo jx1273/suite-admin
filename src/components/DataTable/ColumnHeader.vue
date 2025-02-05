@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { cn } from '@/lib/utils'
-import { ArrowDown, ArrowUp, ChevronsDownUp, EyeOff } from 'lucide-vue-next'
+import { ArrowDown, ArrowUp, ChevronsUpDown, EyeOff } from 'lucide-vue-next'
 
 interface DataTableColumnHeaderProps {
   column: Column<T, any>
@@ -37,7 +37,7 @@ export default {
           <span>{{ title }}</span>
           <ArrowDown v-if="column.getIsSorted() === 'desc'" class="w-4 h-4 ml-2" />
           <ArrowUp v-else-if=" column.getIsSorted() === 'asc'" class="w-4 h-4 ml-2" />
-          <ChevronsDownUp v-else class="w-4 h-4 ml-2" />
+          <ChevronsUpDown v-else class="w-4 h-4 ml-2" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">
