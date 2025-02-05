@@ -3,6 +3,7 @@ import {
   BadgeHelp,
   Boxes,
   Bug,
+  CreditCard,
   LayoutDashboard,
   ListTodo,
   Settings,
@@ -89,7 +90,21 @@ export function useSidebar() {
     },
   ]
 
+  const otherPages = ref<NavGroup[]>([
+    {
+      title: 'Other',
+      items: [
+        {
+          title: 'Plans & Pricing',
+          icon: CreditCard,
+          url: '/billing',
+        },
+      ],
+    },
+  ])
+
   return {
     navData,
+    otherPages,
   }
 }

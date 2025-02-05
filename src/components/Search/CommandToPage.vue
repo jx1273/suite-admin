@@ -11,7 +11,7 @@ const emit = defineEmits<{
   (e: 'click'): void
 }>()
 
-const { navData } = useSidebar()
+const { navData, otherPages } = useSidebar()
 
 function getFlatNavItems(navData: NavGroup[]): NavItem[] {
   const flatItems: NavItem[] = []
@@ -28,7 +28,7 @@ function getFlatNavItems(navData: NavGroup[]): NavItem[] {
   return flatItems
 }
 
-const commands = getFlatNavItems(navData.value!)
+const commands = getFlatNavItems([...navData.value!, ...otherPages.value!])
 
 const router = useRouter()
 const route = useRoute()
