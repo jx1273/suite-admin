@@ -26,7 +26,7 @@ defineProps<DataTablePaginationProps>()
     <div class="flex-1" />
     <div class="flex items-center space-x-6 lg:space-x-8">
       <div class="flex items-center space-x-2">
-        <p class="text-sm font-medium line-clamp-1">
+        <p class="hidden text-sm font-medium line-clamp-1 md:block">
           Rows per page
         </p>
         <Select
