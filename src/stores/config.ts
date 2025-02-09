@@ -1,5 +1,7 @@
-import { type Style, styles } from '@/lib/registry/styles'
-import { type Theme, themes } from '@/lib/registry/themes'
+import type { Style } from '@/lib/registry/styles'
+import type { Theme } from '@/lib/registry/themes'
+import { styles } from '@/lib/registry/styles'
+import { themes } from '@/lib/registry/themes'
 import { useColorMode, useStorage } from '@vueuse/core'
 import { computed } from 'vue'
 
