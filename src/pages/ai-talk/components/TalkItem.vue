@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { TalkType } from './types'
 import { cn } from '@/lib/utils'
 import Copy from './Copy.vue'
 import Refresh from './Refresh.vue'
@@ -6,7 +7,6 @@ import RobotAvatar from './RobotAvatar.vue'
 import ThumbDown from './ThumbDown.vue'
 import ThumbUp from './ThumbUp.vue'
 
-type TalkType = 'self' | 'system'
 interface Props {
   content: string
   type: TalkType

@@ -1,9 +1,10 @@
 <script lang="ts" setup>
+import type { TalkType } from './types'
 import TalkItem from './TalkItem.vue'
 
 interface Props {
   talks: {
-    type: string
+    type: TalkType
     text: string
   }[]
 }

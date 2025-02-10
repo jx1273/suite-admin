@@ -1,9 +1,10 @@
 <script lang="ts" setup>
+import type { TalkType } from './components/types'
 import { toast } from '@/components/ui/toast'
 import TalkFooter from './components/TalkFooter.vue'
 import TalkList from './components/TalkList.vue'
 
-const talks = ref([
+const talks = ref<{ type: TalkType, text: string }[]>([
   {
     type: 'system',
     text: `Hello, I'm your smart assistant, how can I help you?`,
