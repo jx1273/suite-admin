@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import Loading from '@/components/Loading/index.vue'
 import Toaster from '@/components/ui/toast/Toaster.vue'
-import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
 </script>
 
 <template>
   <Toaster />
-  <VueQueryDevtools />
+  <!-- <VueQueryDevtools /> -->
 
   <Suspense>
     <router-view v-slot="{ Component, route }">
