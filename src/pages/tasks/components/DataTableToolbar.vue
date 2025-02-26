@@ -2,12 +2,10 @@
 import type { Table } from '@tanstack/vue-table'
 import type { Task } from '../data/schema'
 import DataTableFacetedFilter from '@/components/DataTable/FacetedFilter.vue'
-
 import DataTableViewOptions from '@/components/DataTable/ViewOptions.vue'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { X } from 'lucide-vue-next'
-import { computed } from 'vue'
 import { priorities, statuses } from '../data/data'
 
 interface DataTableToolbarProps {
@@ -21,25 +19,28 @@ const isFiltered = computed(() => props.table.getState().columnFilters.length > 
 
 <template>
   <div class="flex items-center justify-between">
-    <div class="flex items-center flex-1 space-x-2">
+    <div class="flex flex-col items-start flex-1 space-y-2 md:items-center md:space-x-2 md:space-y-0 md:flex-row">
       <Input
         placeholder="Filter tasks..."
         :model-value="(table.getColumn('title')?.getFilterValue() as string) ?? ''"
         class="h-8 w-[150px] lg:w-[250px]"
         @input="table.getColumn('title')?.setFilterValue($event.target.value)"
       />
-      <DataTableFacetedFilter
-        v-if="table.getColumn('status')"
-        :column="table.getColumn('status')"
-        title="Status"
-        :options="statuses"
-      />
-      <DataTableFacetedFilter
-        v-if="table.getColumn('priority')"
-        :column="table.getColumn('priority')"
-        title="Priority"
-        :options="priorities"
-      />
+
+      <div class="space-x-2">
+        <DataTableFacetedFilter
+          v-if="table.getColumn('status')"
+          :column="table.getColumn('status')"
+          title="Status"
+          :options="statuses"
+        />
+        <DataTableFacetedFilter
+          v-if="table.getColumn('priority')"
+          :column="table.getColumn('priority')"
+          title="Priority"
+          :options="priorities"
+        />
+      </div>
 
       <Button
         v-if="isFiltered"
@@ -48,7 +49,7 @@ const isFiltered = computed(() => props.table.getState().columnFilters.length > 
         @click="table.resetColumnFilters()"
       >
         Reset
-        <X class="w-4 h-4 ml-2" />
+        <X class="w-4 h-4" />
       </Button>
     </div>
     <DataTableViewOptions :table="table" />

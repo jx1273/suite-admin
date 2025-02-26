@@ -1,65 +1,95 @@
 <script setup lang="ts">
 import type { Row } from '@tanstack/vue-table'
+import type { Component } from 'vue'
 import type { Task } from '../data/schema'
-import { Button } from '@/components/ui/button'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { Ellipsis } from 'lucide-vue-next'
-import { computed } from 'vue'
-
+import { Ellipsis, FilePenLine, Trash2 } from 'lucide-vue-next'
 import { labels } from '../data/data'
 import { taskSchema } from '../data/schema'
+import TaskDelete from './TaskDelete.vue'
+import TaskResourceDialog from './TaskResourceDialog.vue'
+
+const props = defineProps<DataTableRowActionsProps>()
 
 interface DataTableRowActionsProps {
   row: Row<Task>
 }
-const props = defineProps<DataTableRowActionsProps>()
-
 const task = computed(() => taskSchema.parse(props.row.original))
+
+const taskLabel = ref(task.value.label)
+
+const showComponent = shallowRef<Component | null>(null)
+
+type TCommand = 'edit' | 'create' | 'delete'
+function handleSelect(command: TCommand) {
+  switch (command) {
+    case 'edit':
+      showComponent.value = TaskResourceDialog
+      break
+    case 'create':
+      showComponent.value = TaskResourceDialog
+      break
+    case 'delete':
+      showComponent.value = TaskDelete
+      break
+  }
+}
+
+const isOpen = ref(false)
 </script>
 
 <template>
-  <DropdownMenu>
-    <DropdownMenuTrigger as-child>
-      <Button
-        variant="ghost"
-        class="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
-      >
-        <Ellipsis class="w-4 h-4" />
-        <span class="sr-only">Open menu</span>
-      </Button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent align="end" class="w-[160px]">
-      <DropdownMenuItem>Edit</DropdownMenuItem>
-      <DropdownMenuItem>Make a copy</DropdownMenuItem>
-      <DropdownMenuItem>Favorite</DropdownMenuItem>
-      <DropdownMenuSeparator />
-      <DropdownMenuSub>
-        <DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
-        <DropdownMenuSubContent>
-          <DropdownMenuRadioGroup :value="task.label">
-            <DropdownMenuRadioItem v-for="label in labels" :key="label.value" :value="label.value">
-              {{ label.label }}
-            </DropdownMenuRadioItem>
-          </DropdownMenuRadioGroup>
-        </DropdownMenuSubContent>
-      </DropdownMenuSub>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem>
-        Delete
-        <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
-      </DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
+  <UiDialog v-model:open="isOpen">
+    <UiDropdownMenu>
+      <UiDropdownMenuTrigger as-child>
+        <UiButton
+          variant="ghost"
+          class="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
+        >
+          <Ellipsis class="w-4 h-4" />
+          <span class="sr-only">Open menu</span>
+        </UiButton>
+      </UiDropdownMenuTrigger>
+      <UiDropdownMenuContent align="end" class="w-[160px]">
+        <UiDialogTrigger as-child>
+          <UiDropdownMenuItem @select.stop="handleSelect('edit')">
+            <span>Edit</span>
+            <UiDropdownMenuShortcut> <FilePenLine class="w-4 h-4" /> </UiDropdownMenuShortcut>
+          </UiDropdownMenuItem>
+        </UiDialogTrigger>
+
+        <UiDropdownMenuItem disabled>
+          Make a copy
+        </UiDropdownMenuItem>
+        <UiDropdownMenuItem disabled>
+          Favorite
+        </UiDropdownMenuItem>
+
+        <UiDropdownMenuSeparator />
+
+        <UiDropdownMenuSub>
+          <UiDropdownMenuSubTrigger>Labels</UiDropdownMenuSubTrigger>
+          <UiDropdownMenuSubContent>
+            <UiDropdownMenuRadioGroup v-model="taskLabel">
+              <UiDropdownMenuRadioItem v-for="label in labels" :key="label.value" :value="label.value">
+                {{ label.label }}
+              </UiDropdownMenuRadioItem>
+            </UiDropdownMenuRadioGroup>
+          </UiDropdownMenuSubContent>
+        </UiDropdownMenuSub>
+
+        <UiDropdownMenuSeparator />
+
+        <UiDialogTrigger as-child>
+          <UiDropdownMenuItem @select.stop="handleSelect('delete')">
+            <span>Delete</span>
+            <UiDropdownMenuShortcut> <Trash2 class="w-4 h-4" /> </UiDropdownMenuShortcut>
+          </UiDropdownMenuItem>
+        </UiDialogTrigger>
+      </UiDropdownMenuContent>
+    </UiDropdownMenu>
+
+    <UiDialogContent>
+      <component :is="showComponent" :task="task" @close="isOpen = false" />
+    </UiDialogContent>
+  </UiDialog>
 </template>
