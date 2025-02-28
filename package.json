@@ -91,9 +91,5 @@
   },
   "eslintConfig": {
     "extends": []
-  },
-  "git": {
-    "commitMessage": "chore: release ${version}",
-    "tagName": "v${version}"
   }
 }
