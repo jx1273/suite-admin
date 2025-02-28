@@ -27,7 +27,7 @@ const currentState = computed(() => {
 </script>
 
 <template>
-  <div class="w-full font-mono bg-white rounded-lg shadow">
+  <div class="w-full font-mono rounded-lg shadow bg-background">
     <header class="relative p-5">
       <h1 class="text-lg">
         Billing Card {{ cardNo }}
