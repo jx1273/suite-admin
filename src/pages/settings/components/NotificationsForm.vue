@@ -176,8 +176,8 @@ const onSubmit = handleSubmit((values) => {
       <FormItem class="flex flex-row items-start space-x-3 space-y-0">
         <FormControl>
           <Checkbox
-            :checked="value"
-            @update:checked="handleChange"
+            :model-value="value"
+            @update:model-value="handleChange"
           />
         </FormControl>
         <div class="space-y-1 leading-none">
