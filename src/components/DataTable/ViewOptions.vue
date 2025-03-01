@@ -45,8 +45,8 @@ const columns = computed(() => props.table.getAllColumns()
         v-for="column in columns"
         :key="column.id"
         class="capitalize"
-        :checked="column.getIsVisible()"
-        @update:checked="(value:boolean) => column.toggleVisibility(!!value)"
+        :model-value="column.getIsVisible()"
+        @update:model-value="(value:boolean) => column.toggleVisibility(!!value)"
       >
         {{ column.id }}
       </DropdownMenuCheckboxItem>
