@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.2.2
+
+[compare changes](https://github.com/Whbbit1999/shadcn-vue-admin/compare/v0.2.1...v0.2.2)
+
+### 🩹 Fixes
+
+- Billing-detail card in dark-mode background style ([277b24b](https://github.com/Whbbit1999/shadcn-vue-admin/commit/277b24b))
+- Data-table view-options component drop-down-menu-checkbox-item status error ([0b7d653](https://github.com/Whbbit1999/shadcn-vue-admin/commit/0b7d653))
+- Data-table table-columns component checkbox status error ([d0d53fb](https://github.com/Whbbit1999/shadcn-vue-admin/commit/d0d53fb))
+- Change settings block notifications-form component checkbox component attributes ([ab5a9e9](https://github.com/Whbbit1999/shadcn-vue-admin/commit/ab5a9e9))
+
+### 🏡 Chore
+
+- Remove release-it and release-it-pnpm, change release to unjs/changelogen ([0c14dcd](https://github.com/Whbbit1999/shadcn-vue-admin/commit/0c14dcd))
+- Remove package.json file git block ([d28bb67](https://github.com/Whbbit1999/shadcn-vue-admin/commit/d28bb67))
+- Update vueuse/core package ([b007f3d](https://github.com/Whbbit1999/shadcn-vue-admin/commit/b007f3d))
+- Update radix-vue to reak-ui ([83ad1ee](https://github.com/Whbbit1999/shadcn-vue-admin/commit/83ad1ee))
+
+### ❤️ Contributors
+
+- Whbbit1999 <luckyboy_dong@sina.com>
+
 ## v0.2.1
 
 [compare changes](https://github.com/Whbbit1999/shadcn-vue-admin/compare/0.2.0...v0.2.1)
