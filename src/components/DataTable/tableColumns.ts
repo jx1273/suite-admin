@@ -5,12 +5,15 @@ import { h } from 'vue'
 export const SelectColumn: ColumnDef<any> = {
   id: 'select',
   header: ({ table }) => h(Checkbox, {
-    'checked': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
-    'onUpdate:checked': (value: boolean) => table.toggleAllPageRowsSelected(!!value),
+    'modelValue': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
+    'onUpdate:modelValue': value => table.toggleAllPageRowsSelected(!!value),
     'ariaLabel': 'Select all',
-    'class': 'translate-y-0.5',
   }),
-  cell: ({ row }) => h(Checkbox, { 'checked': row.getIsSelected(), 'onUpdate:checked': (value: boolean) => row.toggleSelected(!!value), 'ariaLabel': 'Select row', 'class': 'translate-y-0.5' }),
+  cell: ({ row }) => h(Checkbox, {
+    'modelValue': row.getIsSelected(),
+    'onUpdate:modelValue': value => row.toggleSelected(!!value),
+    'ariaLabel': 'Select row',
+  }),
   enableSorting: false,
   enableHiding: false,
 }
