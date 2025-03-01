@@ -2,35 +2,24 @@
 import type { HTMLAttributes, Ref } from 'vue'
 import { cn } from '@/lib/utils'
 import { useEventListener, useMediaQuery, useVModel } from '@vueuse/core'
-import { TooltipProvider } from 'radix-vue'
+import { TooltipProvider } from 'reka-ui'
 import { computed, ref } from 'vue'
-import {
-  provideSidebarContext,
-  SIDEBAR_COOKIE_MAX_AGE,
-  SIDEBAR_COOKIE_NAME,
-  SIDEBAR_KEYBOARD_SHORTCUT,
-  SIDEBAR_WIDTH,
-  SIDEBAR_WIDTH_ICON,
-} from './utils'
+import { provideSidebarContext, SIDEBAR_COOKIE_MAX_AGE, SIDEBAR_COOKIE_NAME, SIDEBAR_KEYBOARD_SHORTCUT, SIDEBAR_WIDTH, SIDEBAR_WIDTH_ICON } from './utils'
 
-const props = withDefaults(
-  defineProps<{
-    defaultOpen?: boolean
-    open?: boolean
-    class?: HTMLAttributes['class']
-  }>(),
-  {
-    defaultOpen: true,
-    open: undefined,
-  },
-)
+const props = withDefaults(defineProps<{
+  defaultOpen?: boolean
+  open?: boolean
+  class?: HTMLAttributes['class']
+}>(), {
+  defaultOpen: true,
+  open: undefined,
+})
 
 const emits = defineEmits<{
   'update:open': [open: boolean]
 }>()
 
-// const isMobile = ref(false) // useIsMobile()
-const isMobile = useMediaQuery('(max-width: 770px)')
+const isMobile = useMediaQuery('(max-width: 768px)')
 const openMobile = ref(false)
 
 const open = useVModel(props, 'open', emits, {
@@ -63,7 +52,7 @@ useEventListener('keydown', (event: KeyboardEvent) => {
 
 // We add a state so that we can do data-state="expanded" or "collapsed".
 // This makes it easier to style the sidebar with Tailwind classes.
-const state = computed(() => (open.value ? 'expanded' : 'collapsed'))
+const state = computed(() => open.value ? 'expanded' : 'collapsed')
 
 provideSidebarContext({
   state,
@@ -83,12 +72,8 @@ provideSidebarContext({
         '--sidebar-width': SIDEBAR_WIDTH,
         '--sidebar-width-icon': SIDEBAR_WIDTH_ICON,
       }"
-      :class="
-        cn(
-          'group/sidebar-wrapper flex min-h-svh w-full text-sidebar-foreground has-[[data-variant=inset]]:bg-sidebar',
-          props.class,
-        )
-      "
+      :class="cn('group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar', props.class)"
+      v-bind="$attrs"
     >
       <slot />
     </div>

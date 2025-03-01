@@ -1,6 +1,6 @@
 import type { Component, InputHTMLAttributes } from 'vue'
 import type { z, ZodAny } from 'zod'
-import type { TInputComponents } from './constant'
+import type { INPUT_COMPONENTS } from './constant'
 
 export interface FieldProps {
   fieldName: string
@@ -18,13 +18,27 @@ export interface Shape {
   schema?: ZodAny
 }
 
+export interface InputComponents {
+  date: Component
+  select: Component
+  radio: Component
+  checkbox: Component
+  switch: Component
+  textarea: Component
+  number: Component
+  string: Component
+  file: Component
+  array: Component
+  object: Component
+}
+
 export interface ConfigItem {
   /** Value for the `FormLabel` */
   label?: string
   /** Value for the `FormDescription` */
   description?: string
   /** Pick which component to be rendered. */
-  component?: TInputComponents | Component
+  component?: keyof typeof INPUT_COMPONENTS | Component
   /** Hide `FormLabel`. */
   hideLabel?: boolean
   inputProps?: InputHTMLAttributes

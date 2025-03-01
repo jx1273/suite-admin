@@ -21,22 +21,18 @@ const items = [
   {
     id: 'applications',
     label: 'Applications',
-
   },
   {
     id: 'desktop',
     label: 'Desktop',
-
   },
   {
     id: 'downloads',
     label: 'Downloads',
-
   },
   {
     id: 'documents',
     label: 'Documents',
-
   },
 ] as const
 
@@ -87,8 +83,8 @@ const onSubmit = handleSubmit((values) => {
           <FormItem :key="item.id" class="flex flex-row items-start space-x-3 space-y-0">
             <FormControl>
               <Checkbox
-                :checked="value.includes(item.id)"
-                @update:checked="(checked) => {
+                :model-value="value.includes(item.id)"
+                @update:model-value="(checked: boolean | 'indeterminate') => {
                   if (Array.isArray(value)) {
                     handleChange(checked ? [...value, item.id] : value.filter(id => id !== item.id))
                   }

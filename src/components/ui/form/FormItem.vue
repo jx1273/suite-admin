@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
-import { useId } from 'radix-vue'
+import { useId } from 'reka-ui'
 import { provide } from 'vue'
 import { FORM_ITEM_INJECTION_KEY } from './injectionKeys'
 
@@ -14,7 +14,7 @@ provide(FORM_ITEM_INJECTION_KEY, id)
 </script>
 
 <template>
-  <div v-auto-animate :class="cn('space-y-2', props.class)">
+  <div :class="cn('space-y-2', props.class)">
     <slot />
   </div>
 </template>

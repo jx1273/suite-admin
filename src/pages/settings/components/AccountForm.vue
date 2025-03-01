@@ -22,7 +22,7 @@ import { cn } from '@/lib/utils'
 import { CalendarDate, DateFormatter, getLocalTimeZone, today } from '@internationalized/date'
 import { toTypedSchema } from '@vee-validate/zod'
 import { CalendarDays, Check, ChevronsUpDown } from 'lucide-vue-next'
-import { toDate } from 'radix-vue/date'
+import { toDate } from 'reka-ui/date'
 import { h, ref } from 'vue'
 import { z } from 'zod'
 

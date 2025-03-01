@@ -1,3 +1,4 @@
+import type { InputComponents } from './interface'
 import AutoFormFieldArray from './AutoFormFieldArray.vue'
 import AutoFormFieldBoolean from './AutoFormFieldBoolean.vue'
 import AutoFormFieldDate from './AutoFormFieldDate.vue'
@@ -7,7 +8,7 @@ import AutoFormFieldInput from './AutoFormFieldInput.vue'
 import AutoFormFieldNumber from './AutoFormFieldNumber.vue'
 import AutoFormFieldObject from './AutoFormFieldObject.vue'
 
-export const INPUT_COMPONENTS = {
+export const INPUT_COMPONENTS: InputComponents = {
   date: AutoFormFieldDate,
   select: AutoFormFieldEnum,
   radio: AutoFormFieldEnum,
@@ -20,8 +21,6 @@ export const INPUT_COMPONENTS = {
   array: AutoFormFieldArray,
   object: AutoFormFieldObject,
 }
-
-export type TInputComponents = 'date' | 'select' | 'radio' | 'checkbox' | 'switch' | 'textarea' | 'number' | 'string' | 'file' | 'array' | 'object'
 
 /**
  * Define handlers for specific Zod types.
