@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.2.3
+
+[compare changes](https://github.com/Whbbit1999/shadcn-vue-admin/compare/v0.2.2...v0.2.3)
+
+### 🚀 Enhancements
+
+- User module CRUD ([f1cbf66](https://github.com/Whbbit1999/shadcn-vue-admin/commit/f1cbf66))
+
+### 🩹 Fixes
+
+- Fix the browser warning of the billing block ([7c77903](https://github.com/Whbbit1999/shadcn-vue-admin/commit/7c77903))
+
+### 🏡 Chore
+
+- Update packages ([e8b1a23](https://github.com/Whbbit1999/shadcn-vue-admin/commit/e8b1a23))
+- Update shadcn-vue checkbox component ([e329434](https://github.com/Whbbit1999/shadcn-vue-admin/commit/e329434))
+
+### ❤️ Contributors
+
+- Whbbit1999 <luckyboy_dong@sina.com>
+
 ## v0.2.2
 
 [compare changes](https://github.com/Whbbit1999/shadcn-vue-admin/compare/v0.2.1...v0.2.2)
