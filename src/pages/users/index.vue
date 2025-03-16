@@ -2,9 +2,9 @@
 import Page from '@/components/Layout/Page.vue'
 
 import { columns } from './components/columns'
-import CreateUser from './components/CreateUser.vue'
 import DataTable from './components/DataTable.vue'
-import InviteUser from './components/InviteUser.vue'
+import UserCreate from './components/UserCreate.vue'
+import UserInvite from './components/UserInvite.vue'
 import { users } from './data/users'
 </script>
 
@@ -15,8 +15,8 @@ import { users } from './data/users'
     sticky
   >
     <template #actions>
-      <InviteUser />
-      <CreateUser />
+      <UserInvite />
+      <UserCreate />
     </template>
     <div class="w-[calc(100svw-2rem)] md:w-full overflow-x-auto">
       <DataTable :data="users" :columns="columns" />
