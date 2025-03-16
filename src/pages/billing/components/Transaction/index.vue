@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { PayState } from '../BillingHistory/data/data'
 import FlickeringGrid from '@/components/InspiraUI/FlickeringGrid.vue'
+import { Icon } from '@iconify/vue'
 import { useClipboard } from '@vueuse/core'
 import { statuses } from '../BillingHistory/data/data'
 
@@ -37,8 +38,8 @@ const currentState = computed(() => {
           {{ orderId }}
         </p>
         <button @click="copy(orderId)">
-          <Icon v-if="!copied" name="carbon:copy" class="duration-300 hover:scale-105" />
-          <Icon v-else name="carbon:checkmark" class="text-green-500 duration-300" />
+          <Icon v-if="!copied" icon="carbon:copy" class="duration-300 hover:scale-105" />
+          <Icon v-else icon="carbon:checkmark" class="text-green-500 duration-300" />
         </button>
       </div>
 

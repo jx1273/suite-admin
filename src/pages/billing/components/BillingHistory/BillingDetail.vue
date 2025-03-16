@@ -9,6 +9,9 @@ defineProps<{
 
 <template>
   <div>
+    <UiDialogTitle>
+      <UiDialogDescription />
+    </UiDialogTitle>
     <Transaction
       :card-no="billing.id"
       :order-id="billing.orderId || ''"

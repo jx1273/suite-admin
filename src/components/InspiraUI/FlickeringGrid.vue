@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { cn } from '@/lib/utils'
+import { templateRef } from '@vueuse/core'
 
 interface FlickeringGridProps {
   squareSize?: number
@@ -22,8 +23,8 @@ const props = withDefaults(defineProps<FlickeringGridProps>(), {
 
 const { squareSize, gridGap, flickerChance, color, maxOpacity, width, height } = toRefs(props)
 
-const containerRef = ref<HTMLDivElement>()
-const canvasRef = ref<HTMLCanvasElement>()
+const containerRef = templateRef<HTMLDivElement>('containerRef')
+const canvasRef = templateRef<HTMLCanvasElement>('canvasRef')
 const context = ref<CanvasRenderingContext2D>()
 
 const isInView = ref(false)

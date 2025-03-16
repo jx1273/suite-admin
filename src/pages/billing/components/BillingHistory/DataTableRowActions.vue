@@ -13,7 +13,7 @@ interface DataTableRowActionsProps {
 const props = defineProps<DataTableRowActionsProps>()
 
 const billing = computed(() => billingSchema.parse(props.row.original))
-const showComponent = ref<Component | null>(null)
+const showComponent = shallowRef<Component | null>(null)
 function handleSelect(command: string) {
   if (command === 'detail') {
     showComponent.value = BillingDetail
