@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Page from '@/components/Layout/Page.vue'
+import Page from '@/components/global-layout/basic-page.vue'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 interface ISocialMediaAccount {

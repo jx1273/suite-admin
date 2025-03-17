@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Page from '@/components/Layout/Page.vue'
-import BillingHistory from './components/BillingHistory/index.vue'
-import Plans from './components/Plan/Plans.vue'
+import Page from '@/components/global-layout/basic-page.vue'
+import BillingHistory from './components/billing-history/index.vue'
+import BillingPlan from './components/billing-plan/index.vue'
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import Plans from './components/Plan/Plans.vue'
     title="Plans & Billing"
     description="Manage your plan and billing history here."
   >
-    <Plans />
+    <BillingPlan />
     <BillingHistory class="mt-2" />
   </Page>
 </template>

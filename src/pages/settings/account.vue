@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import AccountForm from './components/AccountForm.vue'
-import Layout from './components/Layout.vue'
+import AccountForm from './components/account-form.vue'
+import SettingsLayout from './components/settings-layout.vue'
 </script>
 
 <template>
-  <Layout>
+  <SettingsLayout>
     <AccountForm />
-  </Layout>
+  </SettingsLayout>
 </template>

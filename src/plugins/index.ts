@@ -1,5 +1,5 @@
 import type { App } from 'vue'
-import { setupAutoAnimate } from './autoAnimate'
+import { setupAutoAnimate } from './auto-animate'
 import { setupDayjs } from './dayjs'
 import { setupI18n } from './i18n'
 import { setupNProgress } from './nprogress'

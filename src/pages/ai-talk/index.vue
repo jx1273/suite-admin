@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { TalkType } from './components/types'
 import { toast } from '@/components/ui/toast'
-import TalkFooter from './components/TalkFooter.vue'
-import TalkList from './components/TalkList.vue'
+import TalkFooter from './components/talk-footer.vue'
+import TalkList from './components/talk-list.vue'
 
 const talks = ref<{ type: TalkType, text: string }[]>([
   {

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Page from '@/components/Layout/Page.vue'
+import Page from '@/components/global-layout/basic-page.vue'
 
 import { columns } from './components/columns'
-import DataTable from './components/DataTable.vue'
-import UserCreate from './components/UserCreate.vue'
-import UserInvite from './components/UserInvite.vue'
+import DataTable from './components/data-table.vue'
+import UserCreate from './components/user-create.vue'
+import UserInvite from './components/user-invite.vue'
 import { users } from './data/users'
 </script>
 

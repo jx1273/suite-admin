@@ -1,51 +1,52 @@
 <script setup lang="ts">
-import AuthTitle from '@/components/AuthTitle.vue'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Separator } from '@/components/ui/separator'
-import GitHubButton from './components/GitHubButton.vue'
-import GoogleButton from './components/GoogleButton.vue'
-import PrivacyPolicyButton from './components/PrivacyPolicyButton.vue'
-import TermsOfServiceButton from './components/TermsOfServiceButton.vue'
+import AuthTitle from './components/auth-title.vue'
+import GitHubButton from './components/github-button.vue'
+import GoogleButton from './components/google-button.vue'
+import PrivacyPolicyButton from './components/privacy-policy-button.vue'
+import TermsOfServiceButton from './components/terms-of-service-button.vue'
 </script>
 
 <template>
   <div class="flex items-center justify-center min-h-screen p-4 min-w-screen">
     <main class="flex flex-col gap-4">
       <AuthTitle />
-      <Card class="max-w-sm mx-auto">
-        <CardHeader>
-          <CardTitle class="text-xl">
+      <UiCard class="max-w-sm mx-auto">
+        <UiCardHeader>
+          <UiCardTitle class="text-xl">
             Sign Up
-          </CardTitle>
-          <CardDescription>
+          </UiCardTitle>
+          <UiCardDescription>
             Enter your email and password to create an account.
             Already have an account?
-            <Button
+            <UiButton
               variant="link" class="px-0 text-muted-foreground"
               @click="$router.push('/auth/sign-in')"
             >
               Sign In
-            </Button>
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+            </UiButton>
+          </UiCardDescription>
+        </UiCardHeader>
+        <UiCardContent>
           <div class="grid gap-4">
             <div class="grid grid-cols-2 gap-4">
               <div class="grid gap-2">
-                <Label for="first-name">First name</Label>
-                <Input id="first-name" placeholder="Max" required />
+                <UiLabel for="first-name">
+                  First name
+                </UiLabel>
+                <UiInput id="first-name" placeholder="Max" required />
               </div>
               <div class="grid gap-2">
-                <Label for="last-name">Last name</Label>
-                <Input id="last-name" placeholder="Robinson" required />
+                <UiLabel for="last-name">
+                  Last name
+                </UiLabel>
+                <UiInput id="last-name" placeholder="Robinson" required />
               </div>
             </div>
             <div class="grid gap-2">
-              <Label for="email">Email</Label>
-              <Input
+              <UiLabel for="email">
+                Email
+              </UiLabel>
+              <UiInput
                 id="email"
                 type="email"
                 placeholder="m@example.com"
@@ -53,33 +54,37 @@ import TermsOfServiceButton from './components/TermsOfServiceButton.vue'
               />
             </div>
             <div class="grid gap-2">
-              <Label for="password">Password</Label>
-              <Input id="password" type="password" placeholder="******" />
+              <UiLabel for="password">
+                Password
+              </UiLabel>
+              <UiInput id="password" type="password" placeholder="******" />
             </div>
             <div class="grid gap-2">
-              <Label for="password">Confirm Password</Label>
-              <Input id="password" type="password" placeholder="******" />
+              <UiLabel for="password">
+                Confirm Password
+              </UiLabel>
+              <UiInput id="password" type="password" placeholder="******" />
             </div>
-            <Button type="submit" class="w-full">
+            <UiButton type="submit" class="w-full">
               Create Account
-            </Button>
+            </UiButton>
 
-            <Separator label="Or continue with" />
+            <UiSeparator label="Or continue with" />
 
             <div class="flex items-center justify-between gap-4">
               <GitHubButton />
               <GoogleButton />
             </div>
 
-            <CardDescription>
+            <UiCardDescription>
               By creating an account, you agree to our
               <TermsOfServiceButton />
               and
               <PrivacyPolicyButton />
-            </CardDescription>
+            </UiCardDescription>
           </div>
-        </CardContent>
-      </Card>
+        </UiCardContent>
+      </UiCard>
     </main>
   </div>
 </template>

@@ -1,4 +1,4 @@
-import type { FacetedFilterOption } from '@/components/DataTable/types'
+import type { FacetedFilterOption } from '@/components/data-table/types'
 import { Award, BadgeDollarSign, Handshake, Shield } from 'lucide-vue-next'
 import { h } from 'vue'
 

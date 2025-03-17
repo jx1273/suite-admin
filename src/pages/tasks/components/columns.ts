@@ -1,12 +1,12 @@
 import type { ColumnDef } from '@tanstack/vue-table'
 import type { Task } from '../data/schema'
 
-import DataTableColumnHeader from '@/components/DataTable/ColumnHeader.vue'
-import { SelectColumn } from '@/components/DataTable/tableColumns'
+import DataTableColumnHeader from '@/components/data-table/column-header.vue'
+import { SelectColumn } from '@/components/data-table/table-columns'
 import { Badge } from '@/components/ui/badge'
 import { h } from 'vue'
 import { labels, priorities, statuses } from '../data/data'
-import DataTableRowActions from './DataTableRowActions.vue'
+import DataTableRowActions from './data-table-row-actions.vue'
 
 export const columns: ColumnDef<Task>[] = [
   SelectColumn as ColumnDef<Task>,

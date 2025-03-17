@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-import Page from '@/components/Layout/Page.vue'
-import Button from '@/components/ui/button/Button.vue'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import OverviewContent from './components/OverviewContent.vue'
+import Page from '@/components/global-layout/basic-page.vue'
+import OverviewContent from './components/overview-content.vue'
 
 const tabs = ref([
   { name: 'Overview', value: 'overview' },
@@ -21,23 +19,23 @@ const activeTab = ref(tabs.value[0].value)
     sticky
   >
     <template #actions>
-      <Button>Download</Button>
+      <UiButton>Download</UiButton>
     </template>
 
-    <Tabs :default-value="activeTab" class="w-full">
-      <TabsList>
-        <TabsTrigger
+    <UiTabs :default-value="activeTab" class="w-full">
+      <UiTabsList>
+        <UiTabsTrigger
           v-for="tab in tabs" :key="tab.value"
           :value="tab.value"
           :disabled="tab.disabled"
         >
           {{ tab.name }}
-        </TabsTrigger>
-      </TabsList>
-      <TabsContent value="overview" class="space-y-4">
+        </UiTabsTrigger>
+      </UiTabsList>
+      <UiTabsContent value="overview" class="space-y-4">
         <OverviewContent />
-      </TabsContent>
-    </Tabs>
+      </UiTabsContent>
+    </UiTabs>
   </Page>
 </template>
 

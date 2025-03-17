@@ -1,16 +1,8 @@
 <script setup lang="ts">
-import type { TSort } from '@/components/Sort/types'
-import Page from '@/components/Layout/Page.vue'
-import Sort from '@/components/Sort/index.vue'
-import { Input } from '@/components/ui/input'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
-import AppCard from './components/AppCard.vue'
+import type { TSort } from '@/components/sort-select/types'
+import Page from '@/components/global-layout/basic-page.vue'
+import SortSelect from '@/components/sort-select/index.vue'
+import AppCard from './components/app-card.vue'
 import apps from './data/apps'
 
 const appList = ref(apps)
@@ -63,25 +55,25 @@ watch(appType, (newValue) => {
   >
     <div class="flex items-end justify-between sm:items-center">
       <div class="flex flex-col gap-4 sm:flex-row">
-        <Input
+        <UiInput
           v-model:model-value="searchTerm"
           placeholder="Filter apps..."
           class="h-9 w-40 lg:w-[250px]"
         />
 
-        <Select v-model:model-value="appType">
-          <SelectTrigger class-name="w-36">
-            <SelectValue>{{ appType }}</SelectValue>
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem v-for="type in appTypes" :key="type" :value="type">
+        <UiSelect v-model:model-value="appType">
+          <UiSelectTrigger class-name="w-36">
+            <UiSelectValue>{{ appType }}</UiSelectValue>
+          </UiSelectTrigger>
+          <UiSelectContent>
+            <UiSelectItem v-for="type in appTypes" :key="type" :value="type">
               {{ type }}
-            </SelectItem>
-          </SelectContent>
-        </Select>
+            </UiSelectItem>
+          </UiSelectContent>
+        </UiSelect>
       </div>
 
-      <Sort v-model:sort="sort" />
+      <SortSelect v-model:sort="sort" />
     </div>
     <main class="grid grid-cols-1 gap-4 mt-2 lg:grid-cols-3">
       <AppCard

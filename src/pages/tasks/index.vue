@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Page from '@/components/Layout/Page.vue'
+import Page from '@/components/global-layout/basic-page.vue'
 import { columns } from './components/columns'
-import DataTable from './components/DataTable.vue'
-import TaskCreate from './components/TaskCreate.vue'
-import TaskImport from './components/TaskImport.vue'
+import DataTable from './components/data-table.vue'
+import TaskCreate from './components/task-create.vue'
+import TaskImport from './components/task-import.vue'
 import tasks from './data/tasks.json'
 </script>
 
