@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.4
+
+[compare changes](https://github.com/Whbbit1999/shadcn-vue-admin/compare/v0.2.3...v0.2.4)
+
+### 🏡 Chore
+
+- **release:** V0.2.3 ([2c22989](https://github.com/Whbbit1999/shadcn-vue-admin/commit/2c22989))
+
+### ❤️ Contributors
+
+- Whbbit1999 <luckyboy_dong@sina.com>
+
 ## v0.2.3
 
 [compare changes](https://github.com/Whbbit1999/shadcn-vue-admin/compare/v0.2.2...v0.2.3)
