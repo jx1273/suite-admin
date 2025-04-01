@@ -58,7 +58,9 @@ export default defineConfig({
   ],
   css: {
     postcss: {
-      plugins: [tailwind(), autoprefixer()],
+      // eslint-disable-next-line ts/ban-ts-comment
+      // @ts-ignore
+      plugins: [tailwind, autoprefixer],
     },
   },
   resolve: {
