@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.2.5
+
+[compare changes](https://github.com/Whbbit1999/shadcn-vue-admin/compare/v0.2.4...v0.2.5)
+
+### 🩹 Fixes
+
+- **vite.config.ts:** Build error ([8e3620b](https://github.com/Whbbit1999/shadcn-vue-admin/commit/8e3620b))
+
+### 🏡 Chore
+
+- Add description and keywords in index.html ([054d626](https://github.com/Whbbit1999/shadcn-vue-admin/commit/054d626))
+- Update vite ([8a00544](https://github.com/Whbbit1999/shadcn-vue-admin/commit/8a00544))
+
+### ❤️ Contributors
+
+- Whbbit1999 <luckyboy_dong@sina.com>
+
 ## v0.2.4
 
 [compare changes](https://github.com/Whbbit1999/shadcn-vue-admin/compare/v0.2.3...v0.2.4)
