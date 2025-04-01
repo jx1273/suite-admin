@@ -10,6 +10,8 @@ Forked from [shadcn-admin](https://github.com/satnaing/shadcn-admin)
 
 这是一个起始（模板）项目，后续会增加更多组件。
 
+> 在 migration-tailwind-v4 分支中几乎所有功能都已迁移到 tailwindcss v4。
+
 ## 特性
 - [x] 亮色|暗色模式
 - [x] 全局搜索命令

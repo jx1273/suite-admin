@@ -12,6 +12,8 @@ Admin Dashboard UI crafted with Shadcn-vue, Vue3 and Vite. Built with responsive
 
 This is not a starter project (template) though. More components will be added later.
 
+> In migration-tailwind-v4 branch Almost all functions have been migrated to tailwindcss v4.
+
 ## Features
 - [x] Light/Dark Mode
 - [x] Global Search Command
