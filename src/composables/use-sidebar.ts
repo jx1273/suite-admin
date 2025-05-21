@@ -1,6 +1,7 @@
 import type { NavGroup } from '@/components/app-sidebar/types'
 import {
   BadgeHelp,
+  Book,
   Boxes,
   Bug,
   CreditCard,
@@ -16,6 +17,16 @@ export function useSidebar() {
   const navData = ref<NavGroup[]>()
 
   navData.value = [
+    {
+      title: '图书',
+      items: [
+        {
+          title: 'ISBN查询',
+          url: '/books',
+          icon: Book,
+        },
+      ],
+    },
     {
       title: 'General',
       items: [

@@ -9,6 +9,11 @@ export default antfu({
     '**/build/**',
     '**/lib/**',
   ],
+  rules: {
+    'no-empty': 'warn',
+    'no-console': 'warn',
+    'no-unused-vars': 'warn',
+  },
   ...eslintPluginTailwindcss.configs['flat/recommended'],
   ...pluginQuery.configs['flat/recommended'],
 })
